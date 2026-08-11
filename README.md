@@ -46,6 +46,9 @@ Native bulk byte operations.
 **[ESHTTP](https://github.com/thelabcorner/es-http)**  
 HTTP transport for ExtendScript automation.
 
+**[ESTIMER](https://github.com/thelabcorner/es-timer)**  
+Microsecond timing for ExtendScript automation.
+
 </td>
 <td width="50%" valign="top">
 

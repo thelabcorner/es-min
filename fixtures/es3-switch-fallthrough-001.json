@@ -1,0 +1,7 @@
+{
+  "id": "es3-switch-fallthrough-001",
+  "description": "switch with fallthrough, default, and case expressions",
+  "tags": ["es3", "control"],
+  "source": "function f(x){var out=[]; switch(x){case 1: out.push('one'); case 2: out.push('two'); break; default: out.push('other');} return out} return [f(1), f(2), f(9)];",  "expect": { "result": [["one", "two"], ["two"], ["other"]] },
+  "minifiable": true
+}

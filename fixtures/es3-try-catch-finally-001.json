@@ -1,0 +1,8 @@
+{
+  "id": "es3-try-catch-finally-001",
+  "description": "try/catch/finally execution order and error capture",
+  "tags": ["es3", "errors", "control"],
+  "source": "var log=[]; function f(){try{log.push('t'); throw new Error('x')}catch(e){log.push('c:'+e.message)}finally{log.push('f')} return 'done'} var r=f(); return {r:r, log:log};",
+  "expect": { "result": { "r": "done", "log": ["t", "c:x", "f"] } },
+  "minifiable": true
+}

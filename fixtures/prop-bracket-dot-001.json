@@ -1,0 +1,8 @@
+{
+  "id": "prop-bracket-dot-001",
+  "description": "Bracket vs dot property access equivalence",
+  "tags": ["property", "es3", "sensitive"],
+  "source": "var o={foo:7}; var k='foo'; return [o.foo, o['foo'], o[k], o['f'+'oo']];",
+  "expect": { "result": [7, 7, 7, 7] },
+  "minifiable": true
+}

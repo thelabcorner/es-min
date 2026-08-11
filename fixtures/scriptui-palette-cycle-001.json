@@ -1,0 +1,9 @@
+{
+  "id": "scriptui-palette-cycle-001",
+  "description": "ScriptUI palette create, show (non-modal), event handler, close — auto-closed",
+  "tags": ["scriptui", "sensitive"],
+  "source": "var clicks=0; var w = new Window('palette', 'TestPalette', undefined); var b = w.add('button', undefined, 'Go'); b.onClick = function(){ clicks++; }; w.show(); w.close(); return {exists: !!w, type: w.type, clicks: clicks};",
+  "expect": { "result": { "exists": true, "type": "palette", "clicks": 0 } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

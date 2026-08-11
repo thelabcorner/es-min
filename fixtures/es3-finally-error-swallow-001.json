@@ -1,0 +1,8 @@
+{
+  "id": "es3-finally-error-swallow-001",
+  "description": "VERIFIED ENGINE QUIRK: an error inside a finally clause silently terminates the script (no propagation, no catch). Both variants behave identically (silent death -> ok with undefined result).",
+  "tags": ["es3", "errors", "sensitive"],
+  "source": "var out = []; try { out.push('t'); } catch(e) { out.push('c'); } finally { vNeverDeclared; out.push('f'); } return out;",
+  "expect": { "undefined": true },
+  "minifiable": true
+}

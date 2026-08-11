@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-string-001",
+  "description": "Nested ternary producing strings (tests quote style interplay)",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b){return a?(b?'yes':'maybe'):'no'} return [f(1,1), f(1,0), f(0,1)];",
+  "expect": { "result": ["yes", "maybe", "no"] },
+  "minifiable": true,
+  "timeoutSec": 30
+}

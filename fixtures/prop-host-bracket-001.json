@@ -1,0 +1,8 @@
+{
+  "id": "prop-host-bracket-001",
+  "description": "Host object property access via bracket syntax (app properties)",
+  "tags": ["property", "host", "sensitive"],
+  "source": "return [app['name'], app['version'] ? 'has-version' : 'no-version', typeof app['documents']];",
+  "expect": { "result": ["Adobe Illustrator", "has-version", "object"] },
+  "minifiable": true
+}

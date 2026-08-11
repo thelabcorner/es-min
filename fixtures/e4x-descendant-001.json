@@ -1,0 +1,10 @@
+{
+  "id": "e4x-descendant-001",
+  "description": "E4X descendant access with .. operator",
+  "tags": ["e4x", "unsupported-by-uglify"],
+  "source": "var x = <a><b><c>deep</c></b></a>; return String(x..c);",
+  "expect": { "result": "deep" },
+  "minifiable": true,
+  "transformE4X": true,
+  "hasE4X": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "eval-string-callback-001",
+  "description": "String-generated callback invoked dynamically",
+  "tags": [
+    "eval",
+    "es3",
+    "sensitive",
+    "unsafe-subset"
+  ],
+  "source": "function add(a,b){return a+b} var fn=eval('add'); return fn(20,22);",
+  "expect": {
+    "result": 42
+  },
+  "minifiable": true,
+  "expectDivergence": true,
+  "divergenceNote": "aggressive: inline/reduce_funcs rewrite functions referenced through eval strings"
+}

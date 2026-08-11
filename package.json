@@ -1,0 +1,55 @@
+{
+  "name": "es-min",
+  "version": "1.0.0",
+  "description": "ESMIN — UglifyJS-based, Illustrator-verified ExtendScript minification pipeline for .jsx/.jsxinc bundles, with Adobe directive preservation, include resolution, E4X risk handling, and switch-case parser repair.",
+  "type": "module",
+  "bin": {
+    "esmin": "bin/esmin.mjs"
+  },
+  "scripts": {
+    "test": "node tests/run-static-tests.mjs",
+    "minify": "node bin/esmin.mjs",
+    "fixture:conservative": "python scripts/test_extendscript_minification.py --input fixtures --config configs/conservative.json --output reports/final-conservative",
+    "fuzz:generate": "node scripts/fuzz-generate.mjs --count 60 --seed 42 --out reports/fuzz",
+    "fuzz:conservative": "python scripts/test_extendscript_minification.py --input reports/fuzz --config configs/conservative.json --output reports/run-fuzz-conservative",
+    "live-verify": "npm run fixture:conservative && npm run fuzz:generate && npm run fuzz:conservative",
+    "report": "python scripts/report-generator.py --output references/COMPATIBILITY_REPORT.md --results reports/final-conservative/results.jsonl reports/matrix-output/results.jsonl reports/matrix-mangle3/results.jsonl reports/matrix-compress2/results.jsonl"
+  },
+  "files": [
+    "bin/",
+    "configs/",
+    "fixtures/",
+    "references/",
+    "scripts/e4x_to_xml_string.py",
+    "scripts/extendscript_preprocess.py",
+    "scripts/fuzz-generate.mjs",
+    "scripts/minify-jsx.py",
+    "scripts/minify-worker.mjs",
+    "scripts/report-generator.py",
+    "scripts/test_extendscript_minification.py",
+    "tests/",
+    "README.md",
+    "SKILL.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "uglify-js": "3.19.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thelabcorner/es-min.git"
+  },
+  "keywords": [
+    "extendscript",
+    "es3",
+    "minification",
+    "uglifyjs",
+    "illustrator",
+    "jsx",
+    "adobe"
+  ]
+}

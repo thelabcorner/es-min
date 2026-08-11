@@ -1,0 +1,8 @@
+{
+  "id": "errors-caught-expected-001",
+  "description": "Expected runtime error caught and converted to result (both variants must catch identically)",
+  "tags": ["errors", "sensitive"],
+  "source": "var out=[]; try { var x = null; out.push(x.foo); } catch(e) { out.push('caught:' + e.name); } try { var u; out.push(u.foo); } catch(e2) { out.push('u:' + e2.name); } return out;",
+  "expect": { "result": ["caught:TypeError", "u:TypeError"] },
+  "minifiable": true
+}

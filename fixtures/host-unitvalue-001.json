@@ -1,0 +1,8 @@
+{
+  "id": "host-unitvalue-001",
+  "description": "UnitValue creation and conversion",
+  "tags": ["host"],
+  "source": "var u = new UnitValue(12, 'pt'); var v = new UnitValue('1in'); return [u.as('pt'), u.type, v.value];",
+  "expect": { "result": [12, "pt", 1] },
+  "minifiable": true
+}

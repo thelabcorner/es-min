@@ -1,0 +1,18 @@
+{
+  "id": "host-externalobject-typeof-001",
+  "description": "ExternalObject typeof and constructor presence (no DLL load)",
+  "tags": [
+    "host",
+    "externalobject"
+  ],
+  "source": "return {ctor: typeof ExternalObject, search: typeof ExternalObject.search, log: typeof ExternalObject.log, version: typeof ExternalObject.version};",
+  "expect": {
+    "result": {
+      "ctor": "function",
+      "log": "boolean",
+      "search": "function",
+      "version": "undefined"
+    }
+  },
+  "minifiable": true
+}

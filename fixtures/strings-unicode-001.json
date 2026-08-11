@@ -1,0 +1,20 @@
+{
+  "id": "strings-unicode-001",
+  "description": "Unicode strings incl. extended Latin and CJK (ascii_only interplay)",
+  "tags": [
+    "strings",
+    "encoding",
+    "sensitive"
+  ],
+  "source": "var s1='caf\u00e9'; var s2='\u65e5\u672c\u8a9e\u30c6\u30b9\u30c8'; var s3='\u041f\u0440\u0438\u0432\u0435\u0442 \u043c\u0438\u0440'; var s4='emoji\\uD83D\\uDE00'; return [s1, s2, s3, s4, s2.length];",
+  "expect": {
+    "result": [
+      "caf\u00e9",
+      "\u65e5\u672c\u8a9e\u30c6\u30b9\u30c8",
+      "\u041f\u0440\u0438\u0432\u0435\u0442 \u043c\u0438\u0440",
+      "emoji\ud83d\ude00",
+      6
+    ]
+  },
+  "minifiable": true
+}

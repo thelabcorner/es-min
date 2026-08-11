@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-assign-001",
+  "description": "Nested ternary in a variable initializer (UglifyJS drops parens in assignment position)",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e){var x = a?(b?c:d):e; return x} return f(1,2,3,4,5);",
+  "expect": { "result": 3 },
+  "minifiable": true,
+  "timeoutSec": 30
+}

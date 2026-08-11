@@ -1,0 +1,8 @@
+{
+  "id": "channel-undefined-001",
+  "description": "Result channel: undefined must stay distinguishable from null (wrapper drops the result key)",
+  "tags": ["channel"],
+  "source": "var u; return u;",
+  "expect": { "undefined": true },
+  "minifiable": true
+}

@@ -1,0 +1,15 @@
+{
+  "id": "conditional-chained-001",
+  "description": "Chained (right-associative) ternaries without explicit nesting: a?b:c?d:e?f:g",
+  "tags": [
+    "conditional",
+    "es3",
+    "sensitive"
+  ],
+  "source": "function f(a,b,c,d,e,f1,g){return a?b:c?d:e?f1:g} return f(0,2,0,4,5,6,7);",
+  "expect": {
+    "result": 6
+  },
+  "minifiable": true,
+  "timeoutSec": 30
+}

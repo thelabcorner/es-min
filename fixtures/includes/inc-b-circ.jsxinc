@@ -1,0 +1,2 @@
+#include "inc-a-circ.jsxinc"
+function incB(){ return 'b'; }

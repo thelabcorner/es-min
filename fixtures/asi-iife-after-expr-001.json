@@ -1,0 +1,8 @@
+{
+  "id": "asi-iife-after-expr-001",
+  "description": "VERIFIED: 'var x = y\\n(function(){})()' continues as a CALL on y (spec ASI: no split). Both variants fail; error name is stable while messages embed (mangled) variable names.",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "var y=3; try { var x = y\n(function(){return 2})(); return 'no-error'; } catch(e) { return 'err:' + e.name; }",
+  "expect": { "result": "err:ReferenceError" },
+  "minifiable": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "es3-recursion-fib-001",
+  "description": "Recursive fibonacci; tests function hoisting and recursion under compression",
+  "tags": ["es3", "functions"],
+  "source": "function fib(n){return n<2?n:fib(n-1)+fib(n-2)} return fib(12);",
+  "expect": { "result": 144 },
+  "minifiable": true
+}

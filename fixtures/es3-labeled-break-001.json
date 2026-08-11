@@ -1,0 +1,28 @@
+{
+  "id": "es3-labeled-break-001",
+  "description": "Labeled statement with break to label",
+  "tags": [
+    "es3",
+    "control"
+  ],
+  "source": "var out=[]; outer: for(var i=0;i<5;i++){for(var j=0;j<5;j++){if(i*j>6) break outer; out.push(i*10+j)}} return out;",
+  "expect": {
+    "result": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      10,
+      11,
+      12,
+      13,
+      14,
+      20,
+      21,
+      22,
+      23
+    ]
+  },
+  "minifiable": true
+}

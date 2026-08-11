@@ -1,0 +1,9 @@
+{
+  "id": "strings-layer-name-unicode-001",
+  "description": "Unicode layer name round trip through Illustrator DOM (layer added at top, index 0)",
+  "tags": ["strings", "host", "dom"],
+  "source": "var d = app.documents.add(); try { var l = d.layers.add(); l.name = '層 テスト 日本'; var read = l.name; return {name: read, len: read.length}; } finally { try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": { "mode": "partial", "result": { "name": "層 テスト 日本" } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

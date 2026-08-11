@@ -1,0 +1,8 @@
+{
+  "id": "fn-arguments-alias-001",
+  "description": "Named parameter aliased with arguments[] mutation (ES3 magic binding)",
+  "tags": ["functions", "arguments", "es3", "sensitive"],
+  "source": "function f(a){arguments[0]=99; return a} return f(1);",
+  "expect": { "result": 99 },
+  "minifiable": true
+}

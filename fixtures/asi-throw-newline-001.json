@@ -1,0 +1,8 @@
+{
+  "id": "asi-throw-newline-001",
+  "description": "throw followed by newline is a syntax error per ES3; both variants must fail to parse IDENTICALLY (differential)",
+  "tags": ["asi", "es3"],
+  "source": "function f(){try{throw\nnew Error('x')}catch(e){return 'caught'}} return f();",
+  "expectMinifyError": true,
+  "minifiable": true
+}

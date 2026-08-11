@@ -1,0 +1,8 @@
+{
+  "id": "fn-global-lookup-001",
+  "description": "Global function lookup through the global object ($.global) and direct reference",
+  "tags": ["functions", "scope", "sensitive"],
+  "source": "function helper(){return 41} return (typeof helper === 'function') ? helper() + 1 : 'nope';",
+  "expect": { "result": 42 },
+  "minifiable": true
+}

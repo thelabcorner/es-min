@@ -1,0 +1,8 @@
+{
+  "id": "bridgetalk-body-string-001",
+  "description": "BridgeTalk with serialized function source in body (function source text dependence)",
+  "tags": ["bridgetalk", "sensitive", "unsafe-subset"],
+  "source": "function payload(){ return 'hello'; } var bt = new BridgeTalk(); bt.body = '(' + payload.toString() + ')()'; return bt.body.indexOf('hello') >= 0;",
+  "expect": { "result": true },
+  "minifiable": true
+}

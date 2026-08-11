@@ -1,0 +1,8 @@
+{
+  "id": "asi-return-newline-001",
+  "description": "return followed by newline then value: ASI makes it return undefined",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "function f(){return\n1} var r=f(); return r === undefined ? 'undefined' : r;",
+  "expect": { "result": "undefined" },
+  "minifiable": true
+}

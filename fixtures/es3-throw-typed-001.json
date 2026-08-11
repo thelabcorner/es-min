@@ -1,0 +1,8 @@
+{
+  "id": "es3-throw-typed-001",
+  "description": "throw and catch of a custom object with properties",
+  "tags": ["es3", "errors"],
+  "source": "function f(){try{throw {code:42, msg:'custom'}}catch(e){return e.code+':'+e.msg}} return f();",
+  "expect": { "result": "42:custom" },
+  "minifiable": true
+}

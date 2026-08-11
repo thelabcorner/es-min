@@ -1,0 +1,8 @@
+{
+  "id": "bridgetalk-construct-001",
+  "description": "BridgeTalk construction and message body without sending",
+  "tags": ["bridgetalk", "sensitive"],
+  "source": "var bt = new BridgeTalk(); bt.target = 'illustrator'; bt.body = 'app.name'; return {exists: !!bt, target: bt.target, bodyLen: bt.body.length};",
+  "expect": { "result": { "exists": true, "target": "illustrator", "bodyLen": 8 } },
+  "minifiable": true
+}

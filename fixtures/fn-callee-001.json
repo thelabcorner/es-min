@@ -1,0 +1,8 @@
+{
+  "id": "fn-callee-001",
+  "description": "arguments.callee recursion (ES3 feature)",
+  "tags": ["functions", "arguments", "es3"],
+  "source": "function f(n){if(n<=1)return 1; return n*arguments.callee(n-1)} return f(6);",
+  "expect": { "result": 720 },
+  "minifiable": true
+}

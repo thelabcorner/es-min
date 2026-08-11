@@ -1,0 +1,8 @@
+{
+  "id": "es3-prototype-chain-001",
+  "description": "Constructor + prototype inheritance chain",
+  "tags": ["es3", "objects"],
+  "source": "function Animal(n){this.name=n} Animal.prototype.speak=function(){return this.name+'!'}; function Dog(n){Animal.call(this,n)} Dog.prototype=new Animal(); Dog.prototype.constructor=Dog; var d=new Dog('rex'); return [d.speak(), d instanceof Animal, d instanceof Dog];",
+  "expect": { "result": ["rex!", true, true] },
+  "minifiable": true
+}

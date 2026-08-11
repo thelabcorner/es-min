@@ -1,0 +1,9 @@
+{
+  "id": "scriptui-controls-001",
+  "description": "ScriptUI control creation and property reads; auto-closed",
+  "tags": ["scriptui"],
+  "source": "var w = new Window('palette'); var s = w.add('statictext', undefined, 'label'); var e = w.add('edittext', undefined, 'initial'); var cb = w.add('checkbox', undefined, 'check'); cb.value = true; var out = {st: s.text, et: e.text, checked: cb.value}; w.close(); return out;",
+  "expect": { "result": { "st": "label", "et": "initial", "checked": true } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

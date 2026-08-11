@@ -1,0 +1,14 @@
+{
+  "id": "directives-strict-001",
+  "description": "#strict on directive; extracted and restored; body uses strict-compatible code",
+  "tags": [
+    "directives",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#strict on\nfunction strictMain(){ var x = 1; return 'strict-ok'; }\n$.global.__extminResult = strictMain();\n",
+  "expect": {
+    "result": "strict-ok"
+  },
+  "minifiable": true
+}

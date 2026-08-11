@@ -1,0 +1,8 @@
+{
+  "id": "host-app-version-001",
+  "description": "Read application properties (pure read of host globals)",
+  "tags": ["host", "sensitive"],
+  "source": "return {name: app.name, version: app.version, build: app.buildNumber, scripting: app.scriptingVersion, docs: app.documents.length};",
+  "expect": { "mode": "partial", "result": { "name": "Adobe Illustrator" } },
+  "minifiable": true
+}

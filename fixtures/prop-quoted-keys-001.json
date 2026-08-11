@@ -1,0 +1,8 @@
+{
+  "id": "prop-quoted-keys-001",
+  "description": "Quoted vs unquoted property keys must survive (keep_quoted_props / quote_keys interplay)",
+  "tags": ["property", "es3", "sensitive"],
+  "source": "var o={'a b':1, 'if':2, \"quoted-key\":3, reserved:4}; return [o['a b'], o['if'], o['quoted-key'], o['reserved']];",
+  "expect": { "result": [1, 2, 3, 4] },
+  "minifiable": true
+}

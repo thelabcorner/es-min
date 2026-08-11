@@ -1,0 +1,8 @@
+{
+  "id": "fn-named-expr-recursion-001",
+  "description": "Named function expression with internal recursion (name scope)",
+  "tags": ["functions", "es3"],
+  "source": "var f = function fib(n){return n<2?n:fib(n-1)+fib(n-2)}; return f(10);",
+  "expect": { "result": 55 },
+  "minifiable": true
+}

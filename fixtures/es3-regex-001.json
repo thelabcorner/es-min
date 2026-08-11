@@ -1,0 +1,8 @@
+{
+  "id": "es3-regex-001",
+  "description": "Regular expression literals with flags, exec, test, replace",
+  "tags": ["es3", "strings"],
+  "source": "var re=/a(\\d+)/g; var m=re.exec('xa123b'); var t=/^x/.test('xyz'); var r='a1,a2'.replace(/,/g, '-'); return [m[1], t, r, re.global];",
+  "expect": { "result": ["123", true, "a1-a2", true] },
+  "minifiable": true
+}

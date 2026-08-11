@@ -1,0 +1,8 @@
+{
+  "id": "strings-long-001",
+  "description": "Long string concatenation (max_line_len interplay)",
+  "tags": ["strings", "encoding"],
+  "source": "var s=''; for(var i=0;i<2000;i++){s+='x'} return [s.length, s.charAt(0), s.charAt(1999)];",
+  "expect": { "result": [2000, "x", "x"] },
+  "minifiable": true
+}

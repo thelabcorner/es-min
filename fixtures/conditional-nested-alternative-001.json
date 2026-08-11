@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-alternative-001",
+  "description": "Nested ternary in alternative position",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e){return a?b:(c?d:e)} return f(0,2,3,4,5);",
+  "expect": { "result": 4 },
+  "minifiable": true,
+  "timeoutSec": 30
+}

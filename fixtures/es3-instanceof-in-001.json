@@ -1,0 +1,19 @@
+{
+  "id": "es3-instanceof-in-001",
+  "description": "instanceof and in operators",
+  "tags": [
+    "es3",
+    "operators"
+  ],
+  "source": "var o={}; var arr=[]; var s='abc'; return [o instanceof Object, arr instanceof Array, s instanceof String, 'length' in arr, 'x' in o];",
+  "expect": {
+    "result": [
+      true,
+      true,
+      false,
+      true,
+      false
+    ]
+  },
+  "minifiable": true
+}

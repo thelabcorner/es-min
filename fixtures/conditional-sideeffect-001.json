@@ -1,0 +1,9 @@
+{
+  "id": "conditional-sideeffect-001",
+  "description": "Ternaries with function-call side effects in each branch; getter/order semantics must survive",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "var log=[]; function p(v){log.push(v); return v} function f(a){return a?p(1):p(2)} var r=f(1); return {r:r, log:log};",
+  "expect": { "result": { "r": 1, "log": [1] } },
+  "minifiable": true,
+  "timeoutSec": 30
+}

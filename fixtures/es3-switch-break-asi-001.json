@@ -1,0 +1,8 @@
+{
+  "id": "es3-switch-break-asi-001",
+  "description": "VERIFIED ENGINE BUG: 'break}' without semicolon inside a switch case fails to parse ('Error 25: Expected: ;'). UglifyJS emits 'break;' (semicolons:true) which parses. Original fails, minified works -> documented divergence.",
+  "tags": ["es3", "control", "asi", "sensitive"],
+  "source": "var out=[]; switch(1){case 1: out.push('a'); break} return out;",
+  "expectDivergence": true,
+  "minifiable": true
+}

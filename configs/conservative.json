@@ -1,0 +1,94 @@
+{
+  "comment": "Conservative production profile. Every option here was validated against the fixture corpus in real Illustrator (see references/COMPATIBILITY_REPORT.md for the evidence). Changes to this file are not 'safe' until the corpus passes in Illustrator.",
+  "_id": "conservative",
+  "parse": {
+    "module": false,
+    "html5_comments": false
+  },
+  "compress": {
+    "arguments": false,
+    "arrows": false,
+    "awaits": false,
+    "rests": false,
+    "spreads": false,
+    "templates": false,
+
+    "conditionals": false,
+    "if_return": false,
+    "sequences": false,
+    "negate_iife": false,
+
+    "collapse_vars": false,
+    "inline": false,
+    "reduce_funcs": false,
+    "merge_vars": false,
+    "hoist_props": false,
+
+    "properties": false,
+    "pure_getters": false,
+    "directives": false,
+
+    "booleans": true,
+    "comparisons": true,
+    "dead_code": true,
+    "evaluate": true,
+    "join_vars": true,
+    "loops": true,
+    "switches": true,
+    "unused": true,
+
+    "keep_fargs": true,
+    "typeofs": false,
+
+    "unsafe": false,
+    "unsafe_comps": false,
+    "unsafe_Function": false,
+    "unsafe_math": false,
+    "unsafe_proto": false,
+    "unsafe_regexp": false,
+    "unsafe_undefined": false,
+
+    "passes": 1
+  },
+  "mangle": {
+    "toplevel": false,
+    "eval": false,
+    "keep_fnames": false,
+    "keep_fargs": true,
+    "reserved": [
+      "$",
+      "app",
+      "documents",
+      "File",
+      "Folder",
+      "BridgeTalk",
+      "ExternalObject",
+      "ScriptUI",
+      "Window",
+      "UnitValue",
+      "Socket",
+      "System",
+      "XML",
+      "XMLList",
+      "Namespace",
+      "QName",
+      "alert",
+      "confirm",
+      "prompt",
+      "SaveOptions",
+      "UserInteractionLevel",
+      "JSON"
+    ]
+  },
+  "output": {
+    "extendscript": true,
+    "semicolons": true,
+    "braces": true,
+    "ascii_only": true,
+    "keep_quoted_props": true,
+    "quote_keys": true,
+    "quote_style": 3,
+    "inline_script": false,
+    "comments": false
+  }
+}

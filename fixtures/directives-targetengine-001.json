@@ -1,0 +1,14 @@
+{
+  "id": "directives-targetengine-001",
+  "description": "#targetengine named engine directive; file executed in named persistent engine",
+  "tags": [
+    "directives",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#targetengine \"extmin_test_engine\"\nfunction engineMain(){ return 'engine-ok'; }\n$.global.__extminResult = engineMain();\n",
+  "expect": {
+    "result": "engine-ok"
+  },
+  "minifiable": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "es3-nested-scopes-001",
+  "description": "Deeply nested scopes with shadowing at 4 levels",
+  "tags": ["es3", "scope"],
+  "source": "var v=1; function a(){var v=2; function b(){var v=3; function c(){var v=4; return v} return c()} return b()} var r1=a(); function d(){return v} return [r1, d()];",
+  "expect": { "result": [4, 1] },
+  "minifiable": true
+}

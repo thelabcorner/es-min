@@ -1,0 +1,10 @@
+{
+  "id": "e4x-attributes-001",
+  "description": "E4X attribute access via .@ syntax",
+  "tags": ["e4x", "unsupported-by-uglify"],
+  "source": "var x = <rect id=\"r1\" x=\"10\"/>; return String(x.@id) + ':' + String(x.@x);",
+  "expect": { "result": "r1:10" },
+  "minifiable": true,
+  "transformE4X": true,
+  "hasE4X": true
+}

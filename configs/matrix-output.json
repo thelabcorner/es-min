@@ -1,0 +1,32 @@
+{
+  "_id": "matrix-output",
+  "comment": "Output-option isolation matrix. Base: no compression, no mangling. Variants flip exactly one output option.",
+  "_base": {
+    "compress": false,
+    "mangle": false,
+    "output": {
+      "extendscript": true,
+      "semicolons": true,
+      "braces": true,
+      "ascii_only": true,
+      "keep_quoted_props": true,
+      "quote_keys": true,
+      "quote_style": 3,
+      "inline_script": false,
+      "comments": false
+    }
+  },
+  "variants": [
+    { "_id": "output-extendscript-off", "opts": { "output": { "extendscript": false } } },
+    { "_id": "output-extendscript-on", "opts": { "output": { "extendscript": true } } },
+    { "_id": "output-semicolons-false", "opts": { "output": { "semicolons": false } } },
+    { "_id": "output-braces-false", "opts": { "output": { "braces": false } } },
+    { "_id": "output-ascii-false", "opts": { "output": { "ascii_only": false } } },
+    { "_id": "output-keep-quoted-off", "opts": { "output": { "keep_quoted_props": false } } },
+    { "_id": "output-quote-keys-false", "opts": { "output": { "quote_keys": false } } },
+    { "_id": "output-quote-style-0", "opts": { "output": { "quote_style": 0 } } },
+    { "_id": "output-comments-all", "opts": { "output": { "comments": true } } },
+    { "_id": "output-inline-script-true", "opts": { "output": { "inline_script": true } } },
+    { "_id": "output-max-line-len-80", "opts": { "output": { "max_line_len": 80 } } }
+  ]
+}

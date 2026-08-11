@@ -1,0 +1,8 @@
+{
+  "id": "es3-this-context-001",
+  "description": "this binding in method calls and call()",
+  "tags": ["es3", "functions"],
+  "source": "var o={v:5, get:function(){return this.v}}; var r1=o.get(); var fn=o.get; var r2=fn.call(o); return [r1, r2];",
+  "expect": { "result": [5, 5] },
+  "minifiable": true
+}

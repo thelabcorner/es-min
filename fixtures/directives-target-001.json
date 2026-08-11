@@ -1,0 +1,14 @@
+{
+  "id": "directives-target-001",
+  "description": "#target illustrator directive extraction/restoration; file executed via $.evalFile (real file path with preprocessor)",
+  "tags": [
+    "directives",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\nfunction dTargetMain(){ return 'target-ok'; }\n$.global.__extminResult = dTargetMain();\n",
+  "expect": {
+    "result": "target-ok"
+  },
+  "minifiable": true
+}

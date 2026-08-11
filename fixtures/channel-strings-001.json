@@ -1,0 +1,20 @@
+{
+  "id": "channel-strings-001",
+  "description": "Result channel: strings with control characters, quotes, backslashes",
+  "tags": [
+    "channel",
+    "strings"
+  ],
+  "source": "return ['a\\nb', 'tab\\there', 'quote\"double', \"apos'\\''\", 'back\\\\slash', '\\u0000nullchar'];",
+  "expect": {
+    "result": [
+      "a\nb",
+      "tab\there",
+      "quote\"double",
+      "apos'''",
+      "back\\slash",
+      "\u0000nullchar"
+    ]
+  },
+  "minifiable": true
+}

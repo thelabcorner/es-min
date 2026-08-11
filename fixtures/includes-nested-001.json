@@ -1,0 +1,15 @@
+{
+  "id": "includes-nested-001",
+  "description": "Nested includes: main includes level-1 which includes lib-2; native vs build-time resolution must agree",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#include \"includes/inc-level-1.jsxinc\"\nfunction nestedMain(){ return incLevelOne(); }\n$.global.__extminResult = nestedMain();\n",
+  "expect": {
+    "result": "L1:two"
+  },
+  "minifiable": true
+}

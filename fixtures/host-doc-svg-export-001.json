@@ -1,0 +1,9 @@
+{
+  "id": "host-doc-svg-export-001",
+  "description": "Create temp doc, draw rect, export SVG to Folder.temp, verify file exists, cleanup file and doc",
+  "tags": ["host", "files", "dom"],
+  "source": "var d = app.documents.add(); var outPath = Folder.temp + '/extmin-svg-' + (new Date()).getTime() + '.svg'; try { d.pathItems.rectangle(0,0,100,50); var opt = new ExportOptionsSVG(); d.exportFile(new File(outPath), ExportType.SVG, opt); var f = new File(outPath); return {exists: f.exists, size: f.length}; } finally { try { var g = new File(outPath); if (g.exists) { g.remove(); } } catch(e){} try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": { "mode": "partial", "result": { "exists": true } },
+  "minifiable": true,
+  "timeoutSec": 120
+}

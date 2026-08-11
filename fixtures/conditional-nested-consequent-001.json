@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-consequent-001",
+  "description": "Nested ternary in consequent position; the exact shape that fails with 'Error 25: Expected: :.' when parentheses are stripped",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e){return a?(b?c:d):e} return f(1,2,3,4,5);",
+  "expect": { "result": 3 },
+  "minifiable": true,
+  "timeoutSec": 30
+}

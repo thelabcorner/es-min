@@ -1,0 +1,3 @@
+if (typeof INCLUDE_COUNTER === 'undefined') { var INCLUDE_COUNTER = 0; }
+INCLUDE_COUNTER++;
+function incCount(){ return INCLUDE_COUNTER; }

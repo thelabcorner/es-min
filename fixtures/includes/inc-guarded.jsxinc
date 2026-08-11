@@ -1,0 +1,4 @@
+if (typeof GUARDED_LOADED === 'undefined') {
+  var GUARDED_LOADED = true;
+  function incGuarded(){ return 'guarded'; }
+}

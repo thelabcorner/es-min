@@ -1,0 +1,8 @@
+{
+  "id": "errors-in-callback-001",
+  "description": "Error thrown inside a callback function",
+  "tags": ["errors"],
+  "source": "function run(fn){ return fn(); } function boom(){ throw new Error('cb-fail'); } try { run(boom); return 'no-error'; } catch(e){ return e.message; }",
+  "expect": { "result": "cb-fail" },
+  "minifiable": true
+}

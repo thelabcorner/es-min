@@ -1,0 +1,17 @@
+{
+  "id": "eval-indirect-001",
+  "description": "Indirect eval via variable holding eval; scope is global in ES3",
+  "tags": [
+    "eval",
+    "es3",
+    "sensitive",
+    "unsafe-subset"
+  ],
+  "source": "var e=eval; var localOnly=5; return e('typeof localOnly') + ':' + e('typeof Date');",
+  "expect": {
+    "result": "number:function"
+  },
+  "minifiable": true,
+  "expectDivergence": true,
+  "divergenceNote": "aggressive: unused/reduce_vars drop the indirect-eval string-referenced local"
+}

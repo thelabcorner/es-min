@@ -1,0 +1,8 @@
+{
+  "id": "es3-bitwise-001",
+  "description": "Bitwise operators, shifts, and precedence with arithmetic",
+  "tags": ["es3", "operators"],
+  "source": "return [(5 & 3), (5 | 3), (5 ^ 3), (~5), (1 << 4), (256 >> 4), (-1 >>> 28), (2 + 3 * 4), ((2+3)*4)];",
+  "expect": { "result": [1, 7, 6, -6, 16, 16, 15, 14, 20] },
+  "minifiable": true
+}

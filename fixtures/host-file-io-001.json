@@ -1,0 +1,17 @@
+{
+  "id": "host-file-io-001",
+  "description": "File write/read round trip in Folder.temp with fixed name (deterministic); cleanup",
+  "tags": [
+    "host",
+    "files"
+  ],
+  "source": "var f = new File(Folder.temp + '/extmin-fixture-fixed.txt'); f.open('w'); f.writeln('line1'); f.writeln('line2'); f.close(); var g = new File(f.fsName); g.open('r'); var content = g.read(); g.close(); f.remove(); return {path: f.fsName.split(/[\\\\\\/]/).pop(), content: content};",
+  "expect": {
+    "mode": "partial",
+    "result": {
+      "content": "line1\nline2\n"
+    }
+  },
+  "minifiable": true,
+  "timeoutSec": 60
+}

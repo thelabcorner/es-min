@@ -1,0 +1,7 @@
+{
+  "id": "asi-unary-start-line-001",
+  "description": "VERIFIED: 'var a=1\\n+b' continues as 1+b (spec ASI: no split). b hoisted-undefined -> NaN -> null channel. Differential pass.",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "var a=1\n+b; var b=2; return a+b;",
+  "minifiable": true
+}

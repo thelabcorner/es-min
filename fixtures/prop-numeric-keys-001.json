@@ -1,0 +1,8 @@
+{
+  "id": "prop-numeric-keys-001",
+  "description": "Numeric property keys",
+  "tags": ["property", "es3"],
+  "source": "var o={0:'zero', 1:'one', '2':'two'}; var arr=[10,20]; return [o[0], o[1], o[2], arr[1]];",
+  "expect": { "result": ["zero", "one", "two", 20] },
+  "minifiable": true
+}

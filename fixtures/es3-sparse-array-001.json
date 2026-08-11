@@ -1,0 +1,25 @@
+{
+  "id": "es3-sparse-array-001",
+  "description": "Sparse arrays and holes (array literal with elisions)",
+  "tags": [
+    "es3",
+    "arrays"
+  ],
+  "source": "var a=[1,,3]; a[5]=6; var out=[]; for(var i=0;i<a.length;i++){out.push((i in a)?a[i]:'hole')} return [a.length, out];",
+  "expect": {
+    "result": [
+      6,
+      [
+        1,
+        null,
+        3,
+        "hole",
+        "hole",
+        6
+      ]
+    ]
+  },
+  "minifiable": true,
+  "expectDivergence": true,
+  "divergenceNote": "aggressive: hole semantics of sparse arrays change ((i in a) check rewritten)"
+}

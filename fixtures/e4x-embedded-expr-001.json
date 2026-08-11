@@ -1,0 +1,10 @@
+{
+  "id": "e4x-embedded-expr-001",
+  "description": "E4X embedded {expression} sections",
+  "tags": ["e4x", "unsupported-by-uglify"],
+  "source": "var n = 42; var x = <val>{n * 2}</val>; return String(x);",
+  "expect": { "result": "84" },
+  "minifiable": true,
+  "transformE4X": true,
+  "hasE4X": true
+}

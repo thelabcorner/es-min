@@ -1,0 +1,8 @@
+{
+  "id": "errors-reference-001",
+  "description": "ReferenceError equivalence (undefined variable access)",
+  "tags": ["errors", "sensitive"],
+  "source": "return definitelyNotDefined.foo;",
+  "expect": { "error": { "name": "ReferenceError" } },
+  "minifiable": true
+}

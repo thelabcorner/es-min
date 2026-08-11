@@ -1,0 +1,8 @@
+{
+  "id": "asi-regex-after-stmt-001",
+  "description": "Statement followed by regex literal on a new line (division ambiguity); differential comparison of identical sources",
+  "tags": ["asi", "es3"],
+  "source": "var n=10\n/2/.test('2'); var r=/2/.test('2'); return r;",
+  "expectMinifyError": true,
+  "minifiable": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "es3-typeof-void-001",
+  "description": "typeof and void operator edge cases",
+  "tags": ["es3", "operators"],
+  "source": "var u; return [typeof u, typeof 1, typeof 's', typeof true, typeof null, typeof void 0, void 0 === undefined];",
+  "expect": { "result": ["undefined", "number", "string", "boolean", "object", "undefined", true] },
+  "minifiable": true
+}

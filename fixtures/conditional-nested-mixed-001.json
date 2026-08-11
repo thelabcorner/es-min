@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-mixed-001",
+  "description": "Ternary mixing && and || inside branches",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c){return a?(b&&c):(b||c)} return [f(1,1,0), f(0,0,1), f(0,1,0)];",
+  "expect": { "result": [0, 1, 1] },
+  "minifiable": true,
+  "timeoutSec": 30
+}

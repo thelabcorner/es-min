@@ -1,0 +1,8 @@
+{
+  "id": "prop-reflection-001",
+  "description": "Reflection through object keys: dynamic property iteration and lookup",
+  "tags": ["property", "es3", "sensitive"],
+  "source": "var o={alpha:1, beta:2}; var keys=[]; for(var k in o){keys.push(o[k])} return keys.sort();",
+  "expect": { "result": [1, 2] },
+  "minifiable": true
+}

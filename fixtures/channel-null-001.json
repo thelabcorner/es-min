@@ -1,0 +1,8 @@
+{
+  "id": "channel-null-001",
+  "description": "Result channel: null round-trips as null",
+  "tags": ["channel"],
+  "source": "return null;",
+  "expect": { "result": null },
+  "minifiable": true
+}

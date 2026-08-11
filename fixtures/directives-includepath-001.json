@@ -1,0 +1,15 @@
+{
+  "id": "directives-includepath-001",
+  "description": "#includepath directive adds a search directory; includes resolved from both locations",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#includepath \"includes\"\n#include \"sub/inc-deep.jsxinc\"\nfunction ipMain(){ return incDeep(); }\n$.global.__extminResult = ipMain();\n",
+  "expect": {
+    "result": "deep"
+  },
+  "minifiable": true
+}

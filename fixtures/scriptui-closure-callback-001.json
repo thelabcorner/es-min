@@ -1,0 +1,9 @@
+{
+  "id": "scriptui-closure-callback-001",
+  "description": "Closure around a control capturing outer state; callback invoked manually",
+  "tags": ["scriptui", "sensitive"],
+  "source": "var count=0; var w = new Window('palette'); var b = w.add('button', undefined, 'Inc'); (function(){ var c=0; b.onClick = function(){ c++; count=c; }; })(); if (b.onClick) { b.onClick(); b.onClick(); } w.close(); return count;",
+  "expect": { "result": 2 },
+  "minifiable": true,
+  "timeoutSec": 60
+}

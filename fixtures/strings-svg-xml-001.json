@@ -1,0 +1,17 @@
+{
+  "id": "strings-svg-xml-001",
+  "description": "SVG/XML markup stored in strings (must NOT be treated as E4X)",
+  "tags": [
+    "strings",
+    "encoding"
+  ],
+  "source": "var svg = '<svg xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"2\"/></svg>'; var xml = '<config><enabled>true</enabled></config>'; return [svg.length, svg.indexOf('<rect'), xml.indexOf('enabled')];",
+  "expect": {
+    "result": [
+      65,
+      40,
+      9
+    ]
+  },
+  "minifiable": true
+}

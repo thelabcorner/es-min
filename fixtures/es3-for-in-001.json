@@ -1,0 +1,8 @@
+{
+  "id": "es3-for-in-001",
+  "description": "for...in enumeration over object keys (order not asserted)",
+  "tags": ["es3", "control"],
+  "source": "var o={x:1, y:2, z:3}; var keys=[]; var vals=[]; for(var k in o){keys.push(k); vals.push(o[k])} keys.sort(); return {keys:keys, vals:vals.sort()};",
+  "expect": { "result": { "keys": ["x", "y", "z"], "vals": [1, 2, 3] } },
+  "minifiable": true
+}

@@ -1,0 +1,16 @@
+{
+  "id": "errors-host-error-001",
+  "description": "Host DOM error (accessing invalid document reference) \u2014 error equivalence",
+  "tags": [
+    "errors",
+    "host"
+  ],
+  "source": "var d = app.documents.add(); try { d.close(SaveOptions.DONOTSAVECHANGES); var n = d.name; return n; } catch(e) { return 'host-error:' + e.name; }",
+  "expect": {
+    "result": "host-error:ReferenceError"
+  },
+  "minifiable": true,
+  "timeoutSec": 60,
+  "expectDivergence": true,
+  "divergenceNote": "VERIFIED ENGINE BUG: host-object getter errors raised inside RETURN expressions bypass try/catch (statement-form reads are caught; return-expression reads are not). Aggressive sequences puts d.name into a return comma-expression -> error escapes. Conservative keeps statements -> caught."
+}

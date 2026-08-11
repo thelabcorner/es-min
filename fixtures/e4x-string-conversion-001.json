@@ -1,0 +1,8 @@
+{
+  "id": "e4x-string-conversion-001",
+  "description": "E4X workaround: XML literal converted to new XML(string) — the supported minification path",
+  "tags": ["e4x", "sensitive"],
+  "source": "var x = new XML('<root><item id=\"1\">value</item></root>'); return [String(x.item), String(x.item.@id)];",
+  "expect": { "result": ["value", "1"] },
+  "minifiable": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "es3-delete-002",
+  "description": "delete operator on object properties (not on variables)",
+  "tags": ["es3", "operators"],
+  "source": "var o={a:1, b:2}; var r1=delete o.a; return [r1, 'a' in o, o.b];",
+  "expect": { "result": [true, false, 2] },
+  "minifiable": true
+}

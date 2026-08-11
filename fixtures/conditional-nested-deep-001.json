@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-deep-001",
+  "description": "Four levels of nested ternaries in return position",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e,f1,g,h){return a?(b?(c?(d?e:f1):g):h):0} return f(1,1,1,0,9,8,7,6);",
+  "expect": { "result": 8 },
+  "minifiable": true,
+  "timeoutSec": 30
+}

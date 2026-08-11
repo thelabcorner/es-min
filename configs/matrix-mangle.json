@@ -1,0 +1,40 @@
+{
+  "_id": "matrix-mangle",
+  "comment": "Mangle-option isolation matrix. Base: no compression, no mangling. Variants enable exactly one mangling behavior.",
+  "_base": {
+    "compress": false,
+    "mangle": false,
+    "output": {
+      "extendscript": true,
+      "semicolons": true,
+      "braces": true,
+      "ascii_only": true,
+      "keep_quoted_props": true,
+      "quote_keys": true,
+      "quote_style": 3
+    }
+  },
+  "_mangle_base": {
+    "toplevel": false,
+    "eval": false,
+    "keep_fnames": false,
+    "keep_fargs": true,
+    "reserved": [
+      "$", "app", "documents", "File", "Folder", "BridgeTalk", "ExternalObject",
+      "ScriptUI", "Window", "UnitValue", "Socket", "System", "XML", "XMLList",
+      "Namespace", "QName", "alert", "confirm", "prompt", "SaveOptions",
+      "UserInteractionLevel", "JSON"
+    ]
+  },
+  "variants": [
+    { "_id": "mangle-none", "opts": {} },
+    { "_id": "mangle-local", "opts": { "mangle": { "toplevel": false, "eval": false } } },
+    { "_id": "mangle-local-evaltrue", "opts": { "mangle": { "toplevel": false, "eval": true } } },
+    { "_id": "mangle-toplevel", "opts": { "mangle": { "toplevel": true, "eval": false } } },
+    { "_id": "mangle-toplevel-noreserved", "opts": { "mangle": { "toplevel": true, "eval": false, "reserved": [] } } },
+    { "_id": "mangle-keep-fnames", "opts": { "mangle": { "keep_fnames": true, "toplevel": false, "eval": false } } },
+    { "_id": "mangle-keep-fargs-false", "opts": { "mangle": { "keep_fargs": false, "toplevel": false, "eval": false } } },
+    { "_id": "mangle-properties-underscore", "opts": { "mangle": { "toplevel": false, "eval": false, "properties": { "regex": "^_" } } } },
+    { "_id": "mangle-properties-all", "opts": { "mangle": { "toplevel": false, "eval": false, "properties": {} } } }
+  ]
+}

@@ -1,0 +1,2 @@
+var INC_XML = <cfg><enabled>true</enabled></cfg>;
+function incE4x(){ return String(INC_XML.enabled); }

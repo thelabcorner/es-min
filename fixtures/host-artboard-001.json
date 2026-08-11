@@ -1,0 +1,9 @@
+{
+  "id": "host-artboard-001",
+  "description": "Create temp doc, read artboard rect, rename artboard, verify name round trip, cleanup",
+  "tags": ["host", "dom"],
+  "source": "var d = app.documents.add(); try { var ab = d.artboards[0]; var r1 = ab.artboardRect; ab.name = 'main-board'; return {count: d.artboards.length, first: [r1[0], r1[1], r1[2], r1[3]], name: ab.name}; } finally { try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": { "mode": "partial", "result": { "count": 1, "name": "main-board" } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

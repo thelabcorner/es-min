@@ -1,0 +1,8 @@
+{
+  "id": "fn-length-apply-001",
+  "description": "Function .length property and apply/apply-arguments pattern",
+  "tags": ["functions", "arguments", "es3", "sensitive"],
+  "source": "function f(a,b,c){} function g(){return arguments} var r=f.length; var args=g(1,2,3); var max=Math.max.apply(null, [3,9,1]); return [r, args.length, max];",
+  "expect": { "result": [3, 3, 9] },
+  "minifiable": true
+}

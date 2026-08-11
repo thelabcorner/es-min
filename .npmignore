@@ -1,0 +1,6 @@
+node_modules/
+reports/
+scripts/__pycache__/
+*.pyc
+.git/
+.github/

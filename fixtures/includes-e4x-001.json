@@ -1,0 +1,18 @@
+{
+  "id": "includes-e4x-001",
+  "description": "Include file containing E4X: bundled, then transformed to new XML(...) by the E4X transform, then minified",
+  "tags": [
+    "directives",
+    "includes",
+    "e4x",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#include \"includes/inc-e4x.jsxinc\"\nfunction e4xMain(){ return incE4x(); }\n$.global.__extminResult = e4xMain();\n",
+  "expect": {
+    "result": "true"
+  },
+  "minifiable": true,
+  "transformE4X": true,
+  "hasE4X": true
+}

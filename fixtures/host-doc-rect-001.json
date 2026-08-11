@@ -1,0 +1,9 @@
+{
+  "id": "host-doc-rect-001",
+  "description": "Create temp doc, add rectangle, read geometry, close without saving; snapshot returned",
+  "tags": ["host", "dom", "sensitive"],
+  "source": "var before = app.documents.length; var d = app.documents.add(); try { var r = d.pathItems.rectangle(100, 100, 50, 30); var g = r.geometricBounds; var snap = {docsBefore: before, docs: app.documents.length, items: d.pageItems.length, bounds: [g[0], g[1], g[2], g[3]], width: r.width, typename: r.typename}; return snap; } finally { try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": { "mode": "partial", "result": { "items": 1, "width": 50, "typename": "PathItem" } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

@@ -1,0 +1,27 @@
+{
+  "id": "host-color-matrix-001",
+  "description": "Color and matrix object construction and property reads",
+  "tags": [
+    "host",
+    "sensitive"
+  ],
+  "source": "var c = new RGBColor(); c.red = 255; c.green = 0; c.blue = 128; var m = new Matrix(); m.a = 2; m.d = 3; m.tx = 10; return {color: [c.red, c.green, c.blue], matrix: [m.a, m.b, m.c, m.d, m.tx, m.ty]};",
+  "expect": {
+    "result": {
+      "color": [
+        255,
+        0,
+        128
+      ],
+      "matrix": [
+        2,
+        null,
+        null,
+        3,
+        10,
+        null
+      ]
+    }
+  },
+  "minifiable": true
+}

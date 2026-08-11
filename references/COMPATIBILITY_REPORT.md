@@ -1,0 +1,326 @@
+# ExtendScript Minification Compatibility Report
+
+Evidence-backed report for UglifyJS minification of Adobe Illustrator
+ExtendScript. All claims below were verified by executing original and
+minified code inside Adobe Illustrator via ILLUSTRATOR_COM_TOOL.py.
+
+## Environment
+
+- Illustrator: 30.6.0 (2026), build 109R, en_US, Windows x86-64
+- UglifyJS: 3.19.3 (npm)
+- Node: v22.23.2, Python: 3.12/3.14 (pywin32)
+- Total executions recorded: 3350 (original + minified pairs)
+
+## Execution totals by run
+
+| Run | Total | Status histogram |
+|---|---|---|
+| default | 3350 | {'pass': 3181, 'pass-divergence': 129, 'skip': 4, 'mismatch': 20, 'minify-error': 16} |
+
+## Byte-size reductions (all executed fixtures)
+
+- Fixtures with size data: 3346
+- Mean reduction: 11.26%
+- Median reduction: 6.49%
+- Min/Max: -35.51% / 100.0%
+
+## Variant-level results
+
+- `aggressive`: {'pass': 163, 'pass-divergence': 6, 'skip': 1}
+- `baseline`: {'pass': 213, 'pass-divergence': 4, 'skip': 2}
+- `compress-arguments`: {'pass': 46, 'pass-divergence': 2}
+- `compress-assignments`: {'pass': 46, 'pass-divergence': 2}
+- `compress-booleans`: {'pass': 46, 'pass-divergence': 2}
+- `compress-collapse-vars`: {'pass': 46, 'pass-divergence': 2}
+- `compress-comparisons`: {'pass': 46, 'pass-divergence': 2}
+- `compress-conditionals`: {'pass': 46, 'pass-divergence': 2}
+- `compress-dead-code`: {'pass': 46, 'pass-divergence': 2}
+- `compress-directives`: {'pass': 46, 'pass-divergence': 2}
+- `compress-evaluate`: {'pass': 46, 'pass-divergence': 2}
+- `compress-functions`: {'pass': 46, 'pass-divergence': 2}
+- `compress-hoist-funs`: {'pass': 46, 'pass-divergence': 2}
+- `compress-hoist-props`: {'pass': 46, 'pass-divergence': 2}
+- `compress-hoist-vars`: {'pass': 46, 'pass-divergence': 2}
+- `compress-if-return`: {'pass': 46, 'pass-divergence': 2}
+- `compress-inline`: {'pass': 46, 'pass-divergence': 2}
+- `compress-join-vars`: {'pass': 46, 'pass-divergence': 2}
+- `compress-keep-fargs-false`: {'pass': 46, 'pass-divergence': 2}
+- `compress-loops`: {'pass': 46, 'pass-divergence': 2}
+- `compress-merge-vars`: {'pass': 46, 'pass-divergence': 2}
+- `compress-negate-iife`: {'pass': 46, 'pass-divergence': 2}
+- `compress-none`: {'pass': 46, 'pass-divergence': 2}
+- `compress-objects`: {'pass': 46, 'pass-divergence': 2}
+- `compress-passes-2`: {'pass': 46, 'pass-divergence': 2}
+- `compress-properties`: {'pass': 46, 'pass-divergence': 2}
+- `compress-pure-getters`: {'pass': 46, 'pass-divergence': 2}
+- `compress-reduce-funcs`: {'pass': 46, 'pass-divergence': 2}
+- `compress-reduce-vars`: {'pass': 46, 'pass-divergence': 2}
+- `compress-sequences`: {'pass': 46, 'pass-divergence': 2}
+- `compress-side-effects`: {'pass': 46, 'pass-divergence': 2}
+- `compress-strings`: {'pass': 46, 'pass-divergence': 2}
+- `compress-switches`: {'pass': 46, 'pass-divergence': 2}
+- `compress-typeofs`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe-Function`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe-comps`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe-math`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe-proto`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe-regexp`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unsafe-undefined`: {'pass': 46, 'pass-divergence': 2}
+- `compress-unused`: {'pass': 45, 'pass-divergence': 2, 'mismatch': 1}
+- `conservative`: {'pass': 168, 'pass-divergence': 5, 'skip': 1}
+- `mangle-local`: {'pass': 48, 'pass-divergence': 2, 'mismatch': 1}
+- `mangle-none`: {'pass': 49, 'pass-divergence': 2}
+- `mangle-properties-all`: {'pass': 41, 'pass-divergence': 2, 'mismatch': 8}
+- `mangle-properties-underscore`: {'pass': 80, 'pass-divergence': 4, 'minify-error': 16, 'mismatch': 2}
+- `mangle-toplevel`: {'pass': 48, 'pass-divergence': 2, 'mismatch': 1}
+- `output-ascii-false`: {'pass': 49, 'pass-divergence': 2}
+- `output-braces-false`: {'pass': 49, 'pass-divergence': 2}
+- `output-comments-all`: {'pass': 49, 'pass-divergence': 2}
+- `output-extendscript-off`: {'pass': 42, 'pass-divergence': 2, 'mismatch': 7}
+- `output-extendscript-on`: {'pass': 49, 'pass-divergence': 2}
+- `output-inline-script-true`: {'pass': 49, 'pass-divergence': 2}
+- `output-keep-quoted-off`: {'pass': 49, 'pass-divergence': 2}
+- `output-max-line-len-80`: {'pass': 49, 'pass-divergence': 2}
+- `output-quote-keys-false`: {'pass': 49, 'pass-divergence': 2}
+- `output-quote-style-0`: {'pass': 49, 'pass-divergence': 2}
+- `output-semicolons-false`: {'pass': 49, 'pass-divergence': 2}
+
+## Failures
+
+- `conditional-nested-arg-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": 4}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', 'Error 25: Expected: :.\\r"}}
+- `conditional-nested-array-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": [3, 9]}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', 'Error 25: Expected: :.\\r"}}
+- `conditional-nested-assign-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": 3}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', 'Error 25: Expected: :.\\r"}}
+- `conditional-nested-consequent-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": 3}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', 'Error 25: Expected: :.\\r"}}
+- `conditional-nested-deep-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": 8}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', 'Error 25: Expected: :.\\r"}}
+- `conditional-nested-object-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": {"k": 3}}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', 'Error 25: Expected: :.\\r"}}
+- `conditional-nested-string-001` / `output-extendscript-off`: mismatch
+  - original: {"kind": "ok", "payload": ["yes", "maybe", "no"]}
+  - minified: {"kind": "parse_error", "payload": {"message": "(-2147352567, 'Exception occurred.', (0, 'Adobe Illustrator', \"Error 25: Expected: :.\\r"}}
+- `eval-indirect-001` / `mangle-local`: mismatch
+  - original: {"kind": "ok", "payload": "number:function"}
+  - minified: {"kind": "ok", "payload": "undefined:function"}
+- `eval-indirect-001` / `mangle-toplevel`: mismatch
+  - original: {"kind": "ok", "payload": "number:function"}
+  - minified: {"kind": "ok", "payload": "undefined:function"}
+- `bridgetalk-construct-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `conditional-nested-object-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `e4x-string-conversion-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `errors-caught-expected-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `errors-reference-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `eval-indirect-001` / `mangle-properties-underscore`: mismatch
+  - original: {"kind": "ok", "payload": "number:function"}
+  - minified: {"kind": "ok", "payload": "undefined:function"}
+- `eval-with-shadow-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `host-app-version-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `host-color-matrix-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `host-doc-layers-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `host-doc-rect-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `host-doc-text-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `prop-bracket-dot-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `prop-host-bracket-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `prop-quoted-keys-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `scriptui-closure-callback-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `scriptui-palette-cycle-001` / `mangle-properties-underscore`: minify-error
+  - original: null
+  - minified: null
+- `bridgetalk-construct-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": {"bodyLen": 8, "exists": true, "target": "illustrator"}}
+  - minified: {"kind": "ok", "payload": {"i": 8, "t": true, "target": "illustrator"}}
+- `conditional-nested-object-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": {"k": 3}}
+  - minified: {"kind": "ok", "payload": {"t": 3}}
+- `eval-indirect-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": "number:function"}
+  - minified: {"kind": "ok", "payload": "undefined:function"}
+- `host-app-version-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": {"build": "109R", "docs": 1, "name": "Adobe Illustrator", "scripting": "30.0", "version": "30.6.0"}}
+  - minified: {"kind": "ok", "payload": {"i": "30.0", "name": "Adobe Illustrator", "p": "109R", "t": 1, "version": "30.6.0"}}
+- `host-doc-rect-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": {"bounds": [100, 100, 150, 70], "docs": 2, "docsBefore": 1, "items": 1, "typename": "PathItem", "width": 50}}
+  - minified: {"kind": "ok", "payload": {"bounds": [100, 100, 150, 70], "items": 1, "p": 2, "t": 1, "width": 50}}
+- `host-doc-text-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": {"contents": "hello minify", "count": 1, "k": {}}}
+  - minified: {"kind": "ok", "payload": {"count": 1, "i": {}, "t": "hello minify"}}
+- `prop-bracket-dot-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": [7, 7, 7, 7]}
+  - minified: {"kind": "ok", "payload": [7, 7, null, null]}
+- `scriptui-palette-cycle-001` / `mangle-properties-all`: mismatch
+  - original: {"kind": "ok", "payload": {"clicks": 0, "exists": true, "type": "palette"}}
+  - minified: {"kind": "ok", "payload": {"i": true, "type": "palette", "u": 0}}
+- `eval-indirect-001` / `mangle-properties-underscore`: mismatch
+  - original: {"kind": "ok", "payload": "number:function"}
+  - minified: {"kind": "ok", "payload": "undefined:function"}
+- `eval-indirect-001` / `compress-unused`: mismatch
+  - original: {"kind": "ok", "payload": "number:function"}
+  - minified: {"kind": "ok", "payload": "undefined:function"}
+
+## Documented divergences (expected, verified)
+
+- `asi-incdec-lines-001` / `baseline`: (see fixture)
+- `es3-switch-break-asi-001` / `baseline`: (see fixture)
+- `asi-incdec-lines-001` / `conservative`: (see fixture)
+- `es3-sparse-array-001` / `conservative`: (see fixture)
+- `es3-switch-break-asi-001` / `conservative`: (see fixture)
+- `eval-indirect-001` / `conservative`: (see fixture)
+- `eval-string-callback-001` / `conservative`: (see fixture)
+- `asi-incdec-lines-001` / `output-extendscript-off`: (see fixture)
+- `es3-switch-break-asi-001` / `output-extendscript-off`: (see fixture)
+- `asi-incdec-lines-001` / `output-extendscript-on`: (see fixture)
+- `es3-switch-break-asi-001` / `output-extendscript-on`: (see fixture)
+- `asi-incdec-lines-001` / `output-semicolons-false`: (see fixture)
+- `es3-switch-break-asi-001` / `output-semicolons-false`: (see fixture)
+- `asi-incdec-lines-001` / `output-braces-false`: (see fixture)
+- `es3-switch-break-asi-001` / `output-braces-false`: (see fixture)
+- `asi-incdec-lines-001` / `output-ascii-false`: (see fixture)
+- `es3-switch-break-asi-001` / `output-ascii-false`: (see fixture)
+- `asi-incdec-lines-001` / `output-keep-quoted-off`: (see fixture)
+- `es3-switch-break-asi-001` / `output-keep-quoted-off`: (see fixture)
+- `asi-incdec-lines-001` / `output-quote-keys-false`: (see fixture)
+- `es3-switch-break-asi-001` / `output-quote-keys-false`: (see fixture)
+- `asi-incdec-lines-001` / `output-quote-style-0`: (see fixture)
+- `es3-switch-break-asi-001` / `output-quote-style-0`: (see fixture)
+- `asi-incdec-lines-001` / `output-comments-all`: (see fixture)
+- `es3-switch-break-asi-001` / `output-comments-all`: (see fixture)
+- `asi-incdec-lines-001` / `output-inline-script-true`: (see fixture)
+- `es3-switch-break-asi-001` / `output-inline-script-true`: (see fixture)
+- `asi-incdec-lines-001` / `output-max-line-len-80`: (see fixture)
+- `es3-switch-break-asi-001` / `output-max-line-len-80`: (see fixture)
+- `asi-incdec-lines-001` / `mangle-none`: (see fixture)
+- `es3-switch-break-asi-001` / `mangle-none`: (see fixture)
+- `asi-incdec-lines-001` / `mangle-local`: (see fixture)
+- `es3-switch-break-asi-001` / `mangle-local`: (see fixture)
+- `asi-incdec-lines-001` / `mangle-toplevel`: (see fixture)
+- `es3-switch-break-asi-001` / `mangle-toplevel`: (see fixture)
+- `asi-incdec-lines-001` / `mangle-properties-underscore`: (see fixture)
+- `es3-switch-break-asi-001` / `mangle-properties-underscore`: (see fixture)
+- `asi-incdec-lines-001` / `mangle-properties-all`: (see fixture)
+- `es3-switch-break-asi-001` / `mangle-properties-all`: (see fixture)
+- `asi-incdec-lines-001` / `compress-none`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-none`: (see fixture)
+- `asi-incdec-lines-001` / `compress-arguments`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-arguments`: (see fixture)
+- `asi-incdec-lines-001` / `compress-assignments`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-assignments`: (see fixture)
+- `asi-incdec-lines-001` / `compress-booleans`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-booleans`: (see fixture)
+- `asi-incdec-lines-001` / `compress-collapse-vars`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-collapse-vars`: (see fixture)
+- `asi-incdec-lines-001` / `compress-comparisons`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-comparisons`: (see fixture)
+- `asi-incdec-lines-001` / `compress-conditionals`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-conditionals`: (see fixture)
+- `asi-incdec-lines-001` / `compress-dead-code`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-dead-code`: (see fixture)
+- `asi-incdec-lines-001` / `compress-directives`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-directives`: (see fixture)
+- `asi-incdec-lines-001` / `compress-evaluate`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-evaluate`: (see fixture)
+- `asi-incdec-lines-001` / `compress-functions`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-functions`: (see fixture)
+- `asi-incdec-lines-001` / `compress-hoist-funs`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-hoist-funs`: (see fixture)
+- `asi-incdec-lines-001` / `compress-hoist-props`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-hoist-props`: (see fixture)
+- `asi-incdec-lines-001` / `compress-hoist-vars`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-hoist-vars`: (see fixture)
+- `asi-incdec-lines-001` / `compress-if-return`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-if-return`: (see fixture)
+- `asi-incdec-lines-001` / `compress-inline`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-inline`: (see fixture)
+- `asi-incdec-lines-001` / `compress-join-vars`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-join-vars`: (see fixture)
+- `asi-incdec-lines-001` / `compress-loops`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-loops`: (see fixture)
+- `asi-incdec-lines-001` / `compress-merge-vars`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-merge-vars`: (see fixture)
+- `asi-incdec-lines-001` / `compress-negate-iife`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-negate-iife`: (see fixture)
+- `asi-incdec-lines-001` / `compress-objects`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-objects`: (see fixture)
+- `asi-incdec-lines-001` / `compress-properties`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-properties`: (see fixture)
+- `asi-incdec-lines-001` / `compress-pure-getters`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-pure-getters`: (see fixture)
+- `asi-incdec-lines-001` / `compress-reduce-funcs`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-reduce-funcs`: (see fixture)
+- `asi-incdec-lines-001` / `compress-reduce-vars`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-reduce-vars`: (see fixture)
+- `asi-incdec-lines-001` / `compress-sequences`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-sequences`: (see fixture)
+- `asi-incdec-lines-001` / `compress-side-effects`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-side-effects`: (see fixture)
+- `asi-incdec-lines-001` / `compress-strings`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-strings`: (see fixture)
+- `asi-incdec-lines-001` / `compress-switches`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-switches`: (see fixture)
+- `asi-incdec-lines-001` / `compress-typeofs`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-typeofs`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unused`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unused`: (see fixture)
+- `asi-incdec-lines-001` / `compress-passes-2`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-passes-2`: (see fixture)
+- `asi-incdec-lines-001` / `compress-keep-fargs-false`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-keep-fargs-false`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe-math`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe-math`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe-comps`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe-comps`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe-proto`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe-proto`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe-undefined`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe-undefined`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe-Function`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe-Function`: (see fixture)
+- `asi-incdec-lines-001` / `compress-unsafe-regexp`: (see fixture)
+- `es3-switch-break-asi-001` / `compress-unsafe-regexp`: (see fixture)
+- `asi-incdec-lines-001` / `aggressive`: (see fixture)
+- `errors-host-error-001` / `aggressive`: (see fixture)
+- `es3-sparse-array-001` / `aggressive`: (see fixture)
+- `es3-switch-break-asi-001` / `aggressive`: (see fixture)
+- `eval-indirect-001` / `aggressive`: (see fixture)
+- `eval-string-callback-001` / `aggressive`: (see fixture)

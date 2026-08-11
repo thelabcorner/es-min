@@ -1,0 +1,8 @@
+{
+  "id": "es3-incdec-001",
+  "description": "Prefix/postfix increment and decrement across expressions",
+  "tags": ["es3", "operators", "sensitive"],
+  "source": "var a=5; var b=a++; var c=++a; var d=a--; var e=--a; return [a,b,c,d,e];",
+  "expect": { "result": [5, 5, 7, 7, 5] },
+  "minifiable": true
+}

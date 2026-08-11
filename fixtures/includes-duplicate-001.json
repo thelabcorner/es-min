@@ -1,0 +1,15 @@
+{
+  "id": "includes-duplicate-001",
+  "description": "Same include referenced twice: ExtendScript evaluates both times; harness preserves native behavior (no dedup)",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\nif (typeof INCLUDE_COUNTER !== 'undefined') { delete INCLUDE_COUNTER; }\n#include \"includes/inc-counter.jsxinc\"\n#include \"includes/inc-counter.jsxinc\"\nfunction dupMain(){ return incCount(); }\n$.global.__extminResult = dupMain();\n",
+  "expect": {
+    "result": 2
+  },
+  "minifiable": true
+}

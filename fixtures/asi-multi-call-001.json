@@ -1,0 +1,8 @@
+{
+  "id": "asi-multi-call-001",
+  "description": "Multiple calls on one line relying on explicit semicolons; output.semicolons=false would merge",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "var log=[]; function p(v){log.push(v); return v} p(1); p(2); p(3); return log;",
+  "expect": { "result": [1, 2, 3] },
+  "minifiable": true
+}

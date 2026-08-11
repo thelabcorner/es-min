@@ -1,0 +1,8 @@
+{
+  "id": "errors-thrown-type-001",
+  "description": "Throw a plain string and a number (non-Error throws)",
+  "tags": ["errors"],
+  "source": "function f(){ throw 'string-err'; } function g(){ throw 12345; } var out=[]; try { f(); } catch(e){ out.push('s:' + typeof e + ':' + e); } try { g(); } catch(e){ out.push('n:' + typeof e + ':' + e); } return out;",
+  "expect": { "result": ["s:string:string-err", "n:number:12345"] },
+  "minifiable": true
+}

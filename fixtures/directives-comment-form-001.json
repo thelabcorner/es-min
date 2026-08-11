@@ -1,0 +1,14 @@
+{
+  "id": "directives-comment-form-001",
+  "description": "Comment-form directives //@target and //@include; both syntaxes handled",
+  "tags": [
+    "directives",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "//@target illustrator\n//@include \"includes/inc-lib-1.jsxinc\"\nfunction commentMain(){ return incLibOne(); }\n$.global.__extminResult = commentMain();\n",
+  "expect": {
+    "result": "one"
+  },
+  "minifiable": true
+}

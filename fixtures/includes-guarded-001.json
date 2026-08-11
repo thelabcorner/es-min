@@ -1,0 +1,15 @@
+{
+  "id": "includes-guarded-001",
+  "description": "Manual include guard: double include must not re-declare (guard semantics preserved by bundler)",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\nif (typeof GUARDED_LOADED !== 'undefined') { delete GUARDED_LOADED; delete incGuarded; }\n#include \"includes/inc-guarded.jsxinc\"\n#include \"includes/inc-guarded.jsxinc\"\nfunction guardedMain(){ return incGuarded(); }\n$.global.__extminResult = guardedMain();\n",
+  "expect": {
+    "result": "guarded"
+  },
+  "minifiable": true
+}

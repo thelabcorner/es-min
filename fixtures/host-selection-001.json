@@ -1,0 +1,9 @@
+{
+  "id": "host-selection-001",
+  "description": "Create temp doc, select a rectangle, snapshot selection count, cleanup",
+  "tags": ["host", "dom"],
+  "source": "var d = app.documents.add(); try { var r = d.pathItems.rectangle(0,0,40,20); r.selected = true; var sel = d.selection; var snap = {selCount: sel ? sel.length : -1, selType: sel && sel.length ? sel[0].typename : 'none'}; d.selection = null; return snap; } finally { try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": { "result": { "selCount": 1, "selType": "PathItem" } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

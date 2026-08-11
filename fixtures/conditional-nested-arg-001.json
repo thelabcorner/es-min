@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-arg-001",
+  "description": "Nested ternary inside a call argument expression",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function g(v){return v+1} function f(a,b,c,d,e){return g(a?(b?c:d):e)} return f(1,2,3,4,5);",
+  "expect": { "result": 4 },
+  "minifiable": true,
+  "timeoutSec": 30
+}

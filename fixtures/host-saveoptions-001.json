@@ -1,0 +1,16 @@
+{
+  "id": "host-saveoptions-001",
+  "description": "SaveOptions enum object access",
+  "tags": [
+    "host"
+  ],
+  "source": "return [typeof SaveOptions, String(SaveOptions.DONOTSAVECHANGES) !== 'undefined' ? 'has-dontsave' : 'missing', typeof SaveOptions.SAVECHANGES];",
+  "expect": {
+    "result": [
+      "object",
+      "has-dontsave",
+      "object"
+    ]
+  },
+  "minifiable": true
+}

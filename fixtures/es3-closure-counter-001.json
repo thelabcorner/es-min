@@ -1,0 +1,8 @@
+{
+  "id": "es3-closure-counter-001",
+  "description": "Closure over counter variable, called repeatedly",
+  "tags": ["es3", "functions"],
+  "source": "function make(){var n=0; return function(){return ++n}} var c=make(); var out=[]; out.push(c()); out.push(c()); out.push(c()); return out;",
+  "expect": { "result": [1, 2, 3] },
+  "minifiable": true
+}

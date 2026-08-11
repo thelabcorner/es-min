@@ -1,0 +1,9 @@
+{
+  "id": "host-doc-text-001",
+  "description": "Create temp doc, add text frame, read text contents, cleanup",
+  "tags": ["host", "dom", "sensitive"],
+  "source": "var d = app.documents.add(); try { var tf = d.textFrames.add(); tf.contents = 'hello minify'; return {count: d.textFrames.length, contents: tf.contents, k: tf.kind}; } finally { try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": { "mode": "partial", "result": { "contents": "hello minify" } },
+  "minifiable": true,
+  "timeoutSec": 60
+}

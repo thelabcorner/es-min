@@ -1,0 +1,15 @@
+{
+  "id": "includes-no-trailing-newline-001",
+  "description": "Include file without trailing newline; concatenation must not corrupt the next statement",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#include \"includes/inc-nonl.jsxinc\"\nfunction nonlMain(){ return incNonl(); }\n$.global.__extminResult = nonlMain();\n",
+  "expect": {
+    "result": "nonl"
+  },
+  "minifiable": true
+}

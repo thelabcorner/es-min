@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-object-001",
+  "description": "Nested ternary as an object property value",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e){return {k: a?(b?c:d):e}} return f(1,2,3,4,5);",
+  "expect": { "result": { "k": 3 } },
+  "minifiable": true,
+  "timeoutSec": 30
+}

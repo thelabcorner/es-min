@@ -1,0 +1,7 @@
+{
+  "id": "asi-paren-start-line-001",
+  "description": "VERIFIED: 'x=5\\n(function(){})()' continues as a CALL on the number (spec ASI: no split). Both variants fail identically -> differential pass.",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "var x=5\n(function(){return 7})(); return x;",
+  "minifiable": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "es3-do-while-001",
+  "description": "do...while executes body at least once",
+  "tags": ["es3", "control"],
+  "source": "var n=0; var out=[]; do { out.push(n); n+=2 } while (n<6); return out;",
+  "expect": { "result": [0, 2, 4] },
+  "minifiable": true
+}

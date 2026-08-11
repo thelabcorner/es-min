@@ -1,0 +1,15 @@
+{
+  "id": "includes-spaces-path-001",
+  "description": "Include path containing spaces",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#include \"includes/inc-with space.jsxinc\"\nfunction spaceMain(){ return incSpacey(); }\n$.global.__extminResult = spaceMain();\n",
+  "expect": {
+    "result": "spaced"
+  },
+  "minifiable": true
+}

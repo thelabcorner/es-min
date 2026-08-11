@@ -1,0 +1,18 @@
+{
+  "id": "strings-backslash-001",
+  "description": "Windows backslash file paths in strings",
+  "tags": [
+    "strings",
+    "encoding",
+    "sensitive"
+  ],
+  "source": "var p = 'C:\\\\Users\\\\me\\\\art\\\\final.ai'; return [p, p.split('\\\\').length, p.charAt(2)];",
+  "expect": {
+    "result": [
+      "C:\\Users\\me\\art\\final.ai",
+      5,
+      "\\"
+    ]
+  },
+  "minifiable": true
+}

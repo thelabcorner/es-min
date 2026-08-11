@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-cond-001",
+  "description": "Nested ternary in the CONDITION position requires explicit parens; test both semantics survive",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e){return (a?b:c)?d:e} return f(1,9,8,4,5);",
+  "expect": { "result": 4 },
+  "minifiable": true,
+  "timeoutSec": 30
+}

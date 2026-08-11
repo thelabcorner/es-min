@@ -1,0 +1,13 @@
+{
+  "id": "includes-circular-001",
+  "description": "Circular includes must be detected by the harness and rejected clearly (expect harness error)",
+  "tags": [
+    "directives",
+    "includes",
+    "file-mode"
+  ],
+  "mode": "file",
+  "source": "#target illustrator\n#include \"includes/inc-a-circ.jsxinc\"\nfunction circMain(){ return incA(); }\n$.global.__extminResult = circMain();\n",
+  "expectHarnessError": true,
+  "minifiable": true
+}

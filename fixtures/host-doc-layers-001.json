@@ -1,0 +1,22 @@
+{
+  "id": "host-doc-layers-001",
+  "description": "Create temp doc, add/rename/reorder layers, verify names/order, cleanup",
+  "tags": [
+    "host",
+    "dom",
+    "sensitive"
+  ],
+  "source": "var d = app.documents.add(); try { var l1 = d.layers.add(); l1.name = 'alpha'; var l2 = d.layers.add(); l2.name = 'beta'; l2.move(l1, ElementPlacement.PLACEAFTER); var names=[]; for (var i=0;i<d.layers.length;i++){ names.push(d.layers[i].name); } return {count: d.layers.length, names: names}; } finally { try { d.close(SaveOptions.DONOTSAVECHANGES); } catch(e){} }",
+  "expect": {
+    "result": {
+      "count": 3,
+      "names": [
+        "alpha",
+        "beta",
+        "Layer 1"
+      ]
+    }
+  },
+  "minifiable": true,
+  "timeoutSec": 60
+}

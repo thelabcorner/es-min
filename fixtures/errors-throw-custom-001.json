@@ -1,0 +1,8 @@
+{
+  "id": "errors-throw-custom-001",
+  "description": "Custom thrown Error with message — error equivalence between variants",
+  "tags": ["errors", "sensitive"],
+  "source": "throw new Error('boom-42');",
+  "expect": { "error": { "name": "Error", "messageContains": "boom-42" } },
+  "minifiable": true
+}

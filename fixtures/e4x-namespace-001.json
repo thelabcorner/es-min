@@ -1,0 +1,10 @@
+{
+  "id": "e4x-namespace-001",
+  "description": "E4X namespaces and qualified names",
+  "tags": ["e4x", "unsupported-by-uglify"],
+  "source": "default xml namespace = new Namespace('http://example.com/ns'); var x = <root xmlns=\"http://example.com/ns\"><a>v</a></root>; return String(x.a);",
+  "expect": { "result": "v" },
+  "minifiable": false,
+  "note": "'default xml namespace' is a reserved-word statement with no ES3 equivalent; the E4X transform rejects it. Keep such files unminified or isolate the statement.",
+  "hasE4X": true
+}

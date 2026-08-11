@@ -1,0 +1,8 @@
+{
+  "id": "host-folder-temp-001",
+  "description": "Folder.temp and File path handling",
+  "tags": ["host", "files"],
+  "source": "var t = Folder.temp; return {exists: t.exists, isFolder: (t.constructor && t.constructor.name === 'Folder') || t instanceof Folder, pathLen: t.fsName.length > 0};",
+  "expect": { "result": { "exists": true, "isFolder": true, "pathLen": true } },
+  "minifiable": true
+}

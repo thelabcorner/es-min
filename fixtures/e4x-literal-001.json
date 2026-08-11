@@ -1,0 +1,10 @@
+{
+  "id": "e4x-literal-001",
+  "description": "E4X XML literal parse and read in Illustrator; UglifyJS cannot parse this (documented unsupported)",
+  "tags": ["e4x", "unsupported-by-uglify"],
+  "source": "var x = <root><item>value</item></root>; return String(x.item);",
+  "expect": { "result": "value" },
+  "minifiable": true,
+  "transformE4X": true,
+  "hasE4X": true
+}

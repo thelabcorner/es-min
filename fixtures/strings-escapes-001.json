@@ -1,0 +1,8 @@
+{
+  "id": "strings-escapes-001",
+  "description": "Escape sequences: hex, unicode, tabs/newlines, escaped quotes, backslashes, line separators",
+  "tags": ["strings", "encoding", "sensitive"],
+  "source": "return ['\\x41\\x42', '\\u0041\\u0042', '\\n\\t', '\\u2028\\u2029', \"dq\\\"inside\", \"bs\\\\slash\"];",
+  "expect": { "result": ["AB", "AB", "\n\t", "\u2028\u2029", "dq\"inside", "bs\\slash"] },
+  "minifiable": true
+}

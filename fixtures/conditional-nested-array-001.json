@@ -1,0 +1,9 @@
+{
+  "id": "conditional-nested-array-001",
+  "description": "Nested ternary as an array element",
+  "tags": ["conditional", "es3", "sensitive"],
+  "source": "function f(a,b,c,d,e){return [a?(b?c:d):e, 9]} return f(1,2,3,4,5);",
+  "expect": { "result": [3, 9] },
+  "minifiable": true,
+  "timeoutSec": 30
+}

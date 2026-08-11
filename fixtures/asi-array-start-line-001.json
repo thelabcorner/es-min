@@ -1,0 +1,7 @@
+{
+  "id": "asi-array-start-line-001",
+  "description": "VERIFIED: '1\\n[1,2,3]' is parsed as indexing 1[1,2,3] by ExtendScript (spec ASI: no split when continuation is legal). Both variants fail identically -> differential pass.",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "var a=1\n[1,2,3]; var out=[a]; return out;",
+  "minifiable": true
+}

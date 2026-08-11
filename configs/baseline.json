@@ -1,0 +1,16 @@
+{
+  "comment": "Baseline: parse and re-emit only. No compression, no mangling. extendscript:true is already active here because re-emitting source containing nested ternary expressions without parentheses is itself unsafe (Illustrator parser bug 'Error 25: Expected: :.'). keep_quoted_props/quote_keys are mandatory: unquoted reserved-word keys ('{if:2}') raise 'Error 9: Illegal use of reserved word' in ExtendScript.",
+  "_id": "baseline",
+  "parse": { "module": false, "html5_comments": false },
+  "compress": false,
+  "mangle": false,
+  "output": {
+    "extendscript": true,
+    "semicolons": true,
+    "braces": true,
+    "ascii_only": true,
+    "keep_quoted_props": true,
+    "quote_keys": true,
+    "quote_style": 3
+  }
+}

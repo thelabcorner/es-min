@@ -1,0 +1,8 @@
+{
+  "id": "asi-incdec-lines-001",
+  "description": "VERIFIED DIVERGENCE: ExtendScript FAILS to parse 'a\\n++b' (Error 25) while UglifyJS normalizes to 'a;++b' which parses. Spec ASI says 'a; ++b'. Minified variant is spec-correct; original hits an engine parser bug.",
+  "tags": ["asi", "es3", "sensitive"],
+  "source": "var a=1; var b=2; a\n++b; return [a,b];",
+  "expectDivergence": true,
+  "minifiable": true
+}

@@ -1,0 +1,14 @@
+{
+  "id": "host-globals-exist-001",
+  "description": "typeof checks for Adobe/E4X/extendscript globals (runtime availability matrix)",
+  "tags": ["host", "globals"],
+  "source": "var names=['app','File','Folder','BridgeTalk','ExternalObject','ScriptUI','Window','UnitValue','XML','XMLList','Namespace','QName','Socket','System','SaveOptions','UserInteractionLevel','JSON','alert','confirm','prompt']; var out={}; for(var i=0;i<names.length;i++){ var n=names[i]; try { out[n] = typeof eval(n); } catch(e){ out[n]='missing'; } } return out;",
+  "expect": { "mode": "partial", "result": {
+    "app": "object", "File": "function", "Folder": "function", "BridgeTalk": "function",
+    "ExternalObject": "function", "ScriptUI": "function", "Window": "function",
+    "UnitValue": "function", "XML": "function", "XMLList": "function",
+    "Namespace": "function", "QName": "function", "SaveOptions": "object",
+    "UserInteractionLevel": "object", "JSON": "object", "alert": "function"
+  } },
+  "minifiable": true
+}

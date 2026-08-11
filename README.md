@@ -43,13 +43,13 @@ String whitespace and trim methods.
 **[ESCHARS](https://github.com/thelabcorner/es-chars)**  
 Native bulk byte operations.
 
+**[ESHTTP](https://github.com/thelabcorner/es-http)**  
+HTTP transport for ExtendScript automation.
+
 </td>
 <td width="50%" valign="top">
 
 ### Build & Integration Tools
-
-**[ESHTTP](https://github.com/thelabcorner/es-http)**  
-HTTP transport for ExtendScript automation.
 
 **[ESPACK](https://github.com/thelabcorner/espack)**  
 Self-extracting ExternalObject bundles.

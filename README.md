@@ -49,6 +49,9 @@ HTTP transport for ExtendScript automation.
 **[ESTIMER](https://github.com/thelabcorner/es-timer)**  
 Microsecond timing for ExtendScript automation.
 
+**[ESRAND](https://github.com/thelabcorner/es-rand)**  
+Deterministic random streams and sampling for ExtendScript.
+
 </td>
 <td width="50%" valign="top">
 
@@ -65,6 +68,12 @@ Modern ExternalObject ABI declarations for native integrations.
 
 **[VectorIPC](https://github.com/thelabcorner/vector-ipc)**  
 Bounded local IPC for scripting hosts and native plug-ins.
+
+**[ESTC](https://github.com/thelabcorner/estc)**  
+TypeScript-to-ExtendScript build, compatibility, and live-parse tooling.
+
+**[ESDB](https://github.com/thelabcorner/esdb)**  
+Native state and durable storage for Adobe tooling.
 
 **ESOBF** <sub>coming soon</sub>  
 Obfuscation for hardened JSX distribution.

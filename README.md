@@ -20,7 +20,7 @@
 
 ## Part Of The Same Toolkit
 
-> Production-grade ExtendScript infrastructure for Illustrator-era JavaScript engines.
+> Production-grade infrastructure for Adobe ExtendScript.
 
 <table>
 <tr>

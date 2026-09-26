@@ -52,6 +52,9 @@ Microsecond timing for ExtendScript automation.
 **[ESRAND](https://github.com/thelabcorner/es-rand)**  
 Deterministic random streams and sampling for ExtendScript.
 
+**[ESUUID](https://github.com/thelabcorner/es-uuid)**  
+RFC 9562 UUID generation, parsing, and conversion for ExtendScript.
+
 </td>
 <td width="50%" valign="top">
 

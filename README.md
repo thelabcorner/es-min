@@ -78,6 +78,9 @@ TypeScript-to-ExtendScript build, compatibility, and live-parse tooling.
 **[ESDB](https://github.com/thelabcorner/esdb)**  
 Native state and durable storage for Adobe tooling.
 
+**[COMTool](https://github.com/thelabcorner/COMTool)**  
+Guarded COM, ExtendScript, plug-in, and debugger automation for Adobe desktop apps.
+
 **ESOBF** <sub>coming soon</sub>  
 Obfuscation for hardened JSX distribution.
 
